@@ -1,0 +1,10 @@
+parameters:
+    profileExtender.class: ProfilerCustomizeBundle\DataCollector\ProfilerExtensionDataCollector
+    profileExtender.name: profileExtender
+    profileExtender.template: "ProfilerCustomizeBundle:Collector:profiler_extension.html.twig"
+
+services:
+    data_collector.profileExtender:
+        class: %profileExtender.class%
+        tags:
+            - { name: data_collector, template: "%profileExtender.template%", id: "%profileExtender.name%" }

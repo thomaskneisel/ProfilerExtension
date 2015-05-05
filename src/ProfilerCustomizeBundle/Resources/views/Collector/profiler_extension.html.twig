@@ -1,0 +1,52 @@
+
+{% extends 'WebProfilerBundle:Profiler:layout.html.twig' %}
+
+{% block toolbar %}
+    {% set icon %}
+    <span>
+            <img width="13" height="28" alt="base 64 encoded image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAcBAMAAABITyhxAAAAJ1BMVEXNzc3///////////////////////8/Pz////////////+NjY0/Pz9lMO+OAAAADHRSTlMAABAgMDhAWXCvv9e8JUuyAAAAQ0lEQVQI12MQBAMBBmLpMwoMDAw6BxjOOABpHyCdAKRzsNDp5eXl1KBh5oHBAYY9YHoDQ+cqIFjZwGCaBgSpBrjcCwCZgkUHKKvX+wAAAABJRU5ErkJggg==" />
+            <span>Here we are!</span>
+        </span>
+    {% endset %}
+    {% set text %}
+    <div class="sf-toolbar-info-piece">
+        <b>Your Information</b>
+        <span>use collector data set!</span>
+    </div>
+    <div class="sf-toolbar-info-piece">
+        <b>Data.text</b>
+        <span>{{ collector.text }}</span>
+    </div>
+    <div class="sf-toolbar-info-piece">
+        <b>Data.data.text</b>
+        <span>{{ collector.data.text }}</span>
+    </div>
+    <div class="sf-toolbar-info-piece">
+        <b>Data.data.values</b>
+        <ul>
+            {% for value in collector.data.values %}
+                <li>Wert {{ loop.index }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endset %}
+    {% include '@WebProfiler/Profiler/toolbar_item.html.twig' with { 'link': false } %}
+{% endblock %}
+
+{% block head %}
+    {# if the web profiler panel needs some specific JS or CSS files #}
+    {# Here we are! #}
+{% endblock %}
+
+{% block menu %}
+    {# the menu content #}
+    Here we are!
+{% endblock %}
+
+{% block panel %}
+    {# the panel content #}
+    Here we are!
+{% endblock %}
+
+
+
